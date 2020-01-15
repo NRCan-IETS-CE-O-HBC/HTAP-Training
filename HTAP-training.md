@@ -678,7 +678,7 @@ Run HTAP and inspect results.  Results for all four homes:
 
 **QUESTIONS**
 
--  How did the HRV affect energy use - for heating? For Ventilation? 
+-  How did the HRV affect energy use - for heating? For ventilation? 
 -  How could we instruct HTAP to use an exact HRV spec?
 
 
