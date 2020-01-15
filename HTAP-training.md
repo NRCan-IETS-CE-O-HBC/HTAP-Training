@@ -1,14 +1,25 @@
 # HTAP TRAINING 
 
-*_A training syllabus for  the Housing Technology Assessment Platform_*
+[TOC]
 
 ## Prerequisites: Installing HTAP & Training materials
 
-To follow this training curriculum, you must first have HTAP installed. This curriculum also requires additional materials to access them.
+To follow this training curriculum, you must first have HTAP installed. This curriculum also requires additional materials that are held in a separate training repository.
 
 **Step 1:** Install HTAP:
 
 Visit https://github.com/NRCan-IETS-CE-O-HBC/HTAP/blob/general-dev/doc/HTAP-installation.md, and follow the instructions there. 
+
+==**NOTE:**== If you have already installed HTAP, you should sync your copy with the most recent version using the `git pull` command:
+
+```powershell
+PS C:\Users> cd: C:\HTAP
+PS C:\HTAP> git pull
+Already up to date.
+PS C:\HTAP>
+```
+
+
 
 **Step 2:** Download the training repository:
 
@@ -36,11 +47,11 @@ HTAP is a batch scripting tool for HOT2000. It is designed to automate many of t
 
 HTAP includes databases for for energy conservation measures and construction costs. These features enable HTAP explore different scenarios for more energy-efficient design.
 
-### Things HTAP Can & Can't do:  ###
+### Things HTAP can & can't do:  ###
 
 | HTAP CAN:                                                    | HTAP CAN'T:                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Edit site, insulation, air sealing, window, HVAC & PV parameters in hot2000 file | Change administrative inputs (such as builder name)Create a new .h2k file from scratch |
+| Edit site, insulation, air sealing, window, HVAC & PV parameters in hot2000 file | Change administrative inputs (such as builder name, EA contact details) |
 | Perform operations across many .h2k files                    | Create a new .h2k file from scratch                          |
 | Run thousands of different scenarios                         | Design a home                                                |
 | Estimate upgrade costs for energy efficient housing          | Estimate utility costs[^1]                                   |
@@ -103,11 +114,15 @@ graph LR
    
 ```
 
+
+
 ### HTAP Documentation ###
 
 -  [HTAP-installation.md](https://github.com/NRCan-IETS-CE-O-HBC/HTAP/blob/general-dev/doc/HTAP-installation.md): brief document explaining how to install HTAP components and dependencies
 -  [HTAP-quick-start.md](https://github.com/NRCan-IETS-CE-O-HBC/HTAP/blob/general-dev/doc/HTAP-quick-start.md): step-by-step guide for first-time users
 -  [HTAP-input-and-output.md](https://github.com/NRCan-IETS-CE-O-HBC/HTAP/blob/general-dev/doc/HTAP-input-and-output.md): Comprehensive documentation on HTAP input files 
+
+
 
 ### HTAP User Tools ###
 
@@ -123,7 +138,7 @@ graph LR
      
 
 
-[^Alternate Tools]: other analysis tools are very effective at analyzing HTAP output from very large sets.  - notes to be added. 
+[^Alternate Tools]: Other analysis tools are very effective at analyzing HTAP output from very large runs.  You may want to consider PowerBI (https://powerbi.microsoft.com/) or Tableau ([https://www.tableau.com](https://www.tableau.com/)). Traditional data analaysis platforms like Matlab & R will also prove useful if you are proficient in those tools. 
 
 
 
@@ -158,15 +173,17 @@ Concepts introduced in this module:
 -  Working with HTAP output 
 -  Other command-line options
 
+
+
 ### Activity 1 — Running HTAP from the command line   ###
 
 This activity will familiarize you with HTAP's command-line interface and output files. ==The files for this activity are located in `HTAP-Training\Basic_1`== 
 
 
 
+-------
+
 >  **Task 1a:** Invoke HTAP's help message
-
-
 
 **STEP 1:** Using PowerShell, navigate to the module folder using the command `cd C:\HTAP-Training\Basic_1\`. Output:
 
@@ -220,9 +237,11 @@ PS C:\HTAP-Training\Basic_2>
 
 
 
+
+-------
+
+
 >  **TASK 1b:** Invoke HTAP for an already-configured run & examine outputs.
-
-
 
 **STEP 1:**  Type `dir` to view the directory contents. You should find a single `.run` file inside: 
 
@@ -340,6 +359,8 @@ In this activity, you will begin working with HTAP configuration files and learn
 
 
 
+-------
+
 >  **TASK 2a:** Configure HTAP to run a different HOT2000 file in a different location.
 >
 >  HOT2000 files: 
@@ -393,13 +414,13 @@ RunScope_END
 -  What happens if we misspell an entry in the run file — say `CAMLOOPS` ? 
 
    
+  
+----
 
 >  **TASK 2b:** Configure HTAP to run the same analysis for two additional air-tightness specifications: 
 >
 >  -  ACH = 1.5 
 >  -  ACH = 0.6
-
-
 
 **STEP 1:** Locate the `OPT-ACH` entry in the run file:
 
@@ -477,7 +498,9 @@ Run HTAP and inspect results. Note field *input|ListOfUpgrades*:
 
 -  How many runs did we expect HTAP to complete?
 
+   
 
+----
 
 >  **TASK 2d:** Configure HTAP to run every possible combination of window specification and air tightness
 >
@@ -533,6 +556,10 @@ Run HTAP and inspect results. Note field *input|ListOfUpgrades*:
 
 This activity will familiarize you with some common HTAP analysis tasks.  ==The files for this activity  are located in `HTAP-Training\Basic_3`and in `HTAP-Training\h2k_files`==
 
+
+
+---
+
 >  **Task 3a:** Estimate the energy savings associated with upgrading the windows and adding ceiling insulation in a four-unit row-house. 
 >
 >  197-203 Presland is a 70-year-old row-housing unit managed by Ottawa Community Housing. All four units are due for window replacement, and the property manager also wonders if she should add more insulation to the attic. 
@@ -558,7 +585,7 @@ archetypes = 197-Presland.h2k, 199-Presland.h2k, 201-Presland.h2k, 203-Presland.
 
 
 
-**STEP 2:** Edit the `.run` file to that the location is set to Ottawa 
+**STEP 2:** Edit the `.run` file so that the location is set to Ottawa 
 
 ```
   locations   = OTTAWA
@@ -568,7 +595,7 @@ archetypes = 197-Presland.h2k, 199-Presland.h2k, 201-Presland.h2k, 203-Presland.
 
 **STEP 3:** Edit the upgrades section to include the desired attic and window specifications. 
 
-Browse the `HTAP-options.json`, and pick relevant options for `Opt-Windows` and `Opt-Ceilings`. Run HTAP and inspect results.  Results for all four homes:
+Browse the `HTAP-options.json`, and pick relevant options for `Opt-Windows` and `Opt-AtticCeilings`. Run HTAP and inspect results.  Results for all four homes:
 
 | Upgrade                         | Total energy use - all four units (GJ/year) | % Savings |
 | ------------------------------- | ------------------------------------------: | --------: |
@@ -585,3 +612,115 @@ Browse the `HTAP-options.json`, and pick relevant options for `Opt-Windows` and 
 
 ==**TIP:**== If your computer has multiple CPU cores, you can use the `--threads` (or `-t`)  option to speed up run times. Buy default, HTAP will run simulations using three separate threads. This works well on most computers, which commonly have 4 CPU cores. But some computers may have 8 or more cores. Invoking HTAP with the `--treads 8` will greatly speed things up. 
 
+
+
+---
+
+>  **Task 3b:** Examine the effectiveness of installing HRVs in a range of locations in Alberta. 
+>
+>  <img src="img/image-20200115102922097.png" alt="image-20200115102922097" style="zoom: 33%;" />
+>
+>  An Alberta utility representative is curious about how much energy HRVs could save in Alberta. Use HTAP to compare the energy use of HRVs over ventilation fans, using a single archetype (`2Story-2100sqft-FullBsmt.h2k`).
+>
+>  Consider at least two scenarios: 
+>
+>  -  Ventilation fans without heat recovery
+>  -  70% efficient HRV
+>
+>  Run the following locations:
+>
+>  -  Calgary, Edmonton, Fort McMurray, Lethbridge, Rocky Mountain House, Suffield, Cold Lake, Coronation, Grande Prairie, Medicine Hat, Peace River, Red Deer
+
+
+
+**STEP 1:** Edit the `.run` file to specify the archetype
+
+```
+archetypes = 2Story-2100sqft-FullBsmt.h2k
+```
+
+
+
+**STEP 2:** Edit the `.run` to include all of the required locations
+
+```
+  locations   =  CALGARY, EDMONTON, FORTMCMURRAY, LETHBRIDGE, ROCKYMOUNTAINHOUSE, SUFFIELD, COLDLAKE, CORONATION, GRANDEPRAIRIE, MEDICINEHAT, PEACERIVER, REDDEER
+```
+
+==**NOTE:**== HTAP requires all of the locations to be specified on a single line!
+
+
+
+**STEP 3:** Edit the upgrades section to include the desired ventilation specifications. 
+
+Browse the `HTAP-options.json`, and pick relevant options for `Opt-VentSystem `. Set all other upgrades to NA.
+
+```
+   Opt-VentSystem       = VentFans_sre_0, HRV_sre_70
+```
+
+Run HTAP and inspect results.  Results for all four homes:
+
+| input\Opt-Location | output\HDDs | Heating energy w/ Fans (GJ) | Heating energy  w/ HRV (GJ) | Savings |
+| -------- | -------- | -------- | -------- | -------- |
+| Calgary | 5000 | 110.2 | 100.6 | 8.7% |
+| Edmonton | 5120 | 133 | 122.3 | 8% |
+| Fort McMurray | 6250 | 159.9 | 148.3 | 7.3% |
+| Lethbridge | 4500 | 101.8 | 93.2 | 8.4% |
+| Rocky Mountain House | 5640 | 125.3 | 114.6 | 8.5% |
+| Suffield | 4770 | 110.9 | 101.7 | 8.3% |
+| Cold Lake | 5860 | 146.9 | 135.9 | 7.5% |
+| Coronation | 5640 | 141.2 | 130.3 | 7.7% |
+| Grande Prairie | 5790 | 140.5 | 129.7 | 7.7% |
+| Medicine Hat | 4540 | 109.2 | 100.1 | 8.3% |
+| Peace River | 6050 | 157 | 145.4 | 7.4% |
+| Red Deer | 5550 | 139.9 | 128.6 | 8.1% |
+
+**QUESTIONS**
+
+-  How did the HRV affect energy use - for heating? For Ventilation? 
+-  How could we instruct HTAP to use an exact HRV spec?
+
+
+
+
+---
+
+>  **Task 3c:** Use HTAP to compare these exact ventilation specifications for the same archetype (`2Story-2100sqft-FullBsmt.h2k`) and Alberta locations (Calgary, Edmonton, Fort McMurray, Lethbridge, Rocky Mountain House, Suffield, Cold Lake, Coronation, Grande Prairie, Medicine Hat, Peace River, Red Deer)
+>
+>  | Specification               | Vent fans | HRV   |
+>  | --------------------------- | --------- | ----- |
+>  | System type                 | Utility   | HRV   |
+>  | Supply flow rate            | 70 l/s    | Same  |
+>  | Exhaust flow rate           | 70 l/s    | Same  |
+>  | Fan power @ 0°C             | 120 W     | 105 W |
+>  | Fan power @-25°C            | —         | 120 W |
+>  | SRE @ 0° C                  | —         | 73%   |
+>  | SRE @ -25° C                | —         | 63%   |
+>  | Cooling recovery efficiency | —         | 21%   |
+>
+>  **NOTE:** The `HTAP-options.json`file does not have pre-configured options for these specific ventilation systems.
+
+**STEP 1:**  Make two copies of the archetype's hot2000 file (e.g. ``2Story-2100sqft-FullBsmt_VentFan.h2k` and `2Story-2100sqft-FullBsmt_HRV.h2k`)
+
+
+
+**STEP 2:** Using HOT2000, edit the ventilation specifications to reflect the ventilation fan and HRV scenarios. 
+
+![image-20200115121201816](img/image-20200115121201816.png)
+
+**STEP 3:** Configure the .run file to specify both archetype variants 
+
+```
+archetypes   = 2Story-2100sqft-FullBsmt_vent-fans.h2k, 2Story-2100sqft-FullBsmt_hrv.h2k
+```
+
+Ensure that all upgrade options are set to `NA` (including `Opt-VentSystem `). Run HTAP and inspect the results. 
+
+
+
+**QUESTIONS**
+
+-  What if you were asked to study the impact of these specifications alongside standard HTAP options (such as air-tightness)?
+
+   
