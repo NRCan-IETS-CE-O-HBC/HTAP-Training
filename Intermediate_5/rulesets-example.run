@@ -1,0 +1,57 @@
+! Definitions file for HTAP-PRM RUN (Used for Jan 17 training session) 
+
+! Run-Mode: Parameters that affect how htap-prm is configured.
+RunParameters_START
+  run-mode                           = mesh
+  archetype-dir                      = C:/HTAP-Training/h2k_files
+  unit-costs-db                      = C:/HTAP/HTAPUnitCosts.json
+  options-file                       = C:/HTAP/HTAP-options.json
+RunParameters_END
+
+
+! Parameters controlling archetypes, locations, reference rulests. (these will always be
+! run in mesh, even if an optimization mode is added in the future.
+RunScope_START
+
+  archetypes                        = 2Story-2100sqft-FullBsmt.h2k
+  locations                         = WINNIPEG
+  rulesets                          = as-found
+
+RunScope_END
+
+! Parameters controlling the design of the building
+Upgrades_START
+
+
+   Opt-ResultHouseCode  = General
+
+   Opt-ACH         = NA 
+
+   Opt-Windows     = NA 
+   Opt-Skylights   = NA
+   Opt-DoorWindows = NA
+   Opt-Doors       = NA
+
+   Opt-AboveGradeWall = NC_R-16(eff)_2x6-24inOC_R19-batt_poly_vb, NC_R-19(eff)_2x4-16inOC_R14-batt+1.5inXPS_poly_vb, NC_R-21(eff)_2x6-16inOC_R19-batt+1inXPS_poly_vb, NC_R-23(eff)_2x6-16inOC_R24-batt+1inXPS_poly_vb, NC_R-26(eff)_2x6-16inOC_R19-batt+2inXPS_poly_vb, NC_R-29(eff)_2x6-24inOC_R24-batt+2inXPS_poly_vb, NC_R-40(eff)_2x6-16inOC_R24-batt+4.5inXPS_poly_vb  
+
+   Opt-FoundationWallExtIns     =  NA
+   Opt-FoundationWallIntIns     =  NA
+   Opt-FoundationSlabBelowGrade =  NA
+   Opt-FoundationSlabOnGrade    =  NA
+
+
+   Opt-ExposedFloor     = NA
+
+   Opt-Ceilings         = NA
+   Opt-AtticCeilings    = NA
+   Opt-CathCeilings     = NA
+   Opt-FlatCeilings     = NA
+
+   Opt-VentSystem       = NA
+   Opt-DHWSystem        = NA
+   Opt-Heating-Cooling  = NA 
+   Opt-DWHR             = NA
+   Opt-H2K-PV           = NA
+
+
+Upgrades_END
