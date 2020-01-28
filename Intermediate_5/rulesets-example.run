@@ -10,11 +10,11 @@ RunParameters_END
 
 
 ! Parameters controlling archetypes, locations, reference rulests. (these will always be
-! run in mesh, even if an optimization mode is added in the future.
+! run in mesh, even if an optimization mode is added in the future.  
 RunScope_START
 
-  archetypes                        = 2Story-2100sqft-FullBsmt.h2k
-  locations                         = WINNIPEG
+  archetypes                        = AB-LowEnergy.h2k
+  locations                         = NA
   rulesets                          = as-found
 
 RunScope_END
@@ -32,7 +32,7 @@ Upgrades_START
    Opt-DoorWindows = NA
    Opt-Doors       = NA
 
-   Opt-AboveGradeWall = NC_R-16(eff)_2x6-24inOC_R19-batt_poly_vb, NC_R-19(eff)_2x4-16inOC_R14-batt+1.5inXPS_poly_vb, NC_R-21(eff)_2x6-16inOC_R19-batt+1inXPS_poly_vb, NC_R-23(eff)_2x6-16inOC_R24-batt+1inXPS_poly_vb, NC_R-26(eff)_2x6-16inOC_R19-batt+2inXPS_poly_vb, NC_R-29(eff)_2x6-24inOC_R24-batt+2inXPS_poly_vb, NC_R-40(eff)_2x6-16inOC_R24-batt+4.5inXPS_poly_vb  
+   Opt-AboveGradeWall = NA 
 
    Opt-FoundationWallExtIns     =  NA
    Opt-FoundationWallIntIns     =  NA
@@ -52,6 +52,10 @@ Upgrades_START
    Opt-Heating-Cooling  = NA 
    Opt-DWHR             = NA
    Opt-H2K-PV           = NA
+
+   Opt-Baseloads        = NA
+   
+   Opt-WindowDistribution = NA
 
 
 Upgrades_END
