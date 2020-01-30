@@ -6,9 +6,15 @@
 
 ---
 
-Version of January 27
+Version of January 30
 
 [TOC]
+
+
+
+ad
+
+
 
 
 
@@ -16,7 +22,7 @@ Version of January 27
 
 ---
 
-# Prerequisites: Installing HTAP & Training materials
+# Prerequisites: Installing HTAP & Training materials #
 
 ----
 
@@ -28,7 +34,7 @@ Visit https://github.com/NRCan-IETS-CE-O-HBC/HTAP/blob/general-dev/doc/HTAP-inst
 
 ==**NOTE:**== If you have already installed HTAP, you should sync your copy with the most recent version using the `git pull` command:
 
-```powershell
+```
 PS C:\Users> cd: C:\HTAP
 
 PS C:\HTAP> git pull
@@ -42,7 +48,7 @@ PS C:\HTAP>
 
 Using PowerShell, navigate to `C:\` and enter the command `git clone https://github.com/NRCan-IETS-CE-O-HBC/HTAP-Training.git`
 
-```powershell
+```
 PS C:\Users> cd: C:\
 PS C:\> git clone https://github.com/NRCan-IETS-CE-O-HBC/HTAP-Training.git
 Cloning into 'HTAP-Training'...
@@ -54,7 +60,27 @@ Unpacking objects: 100% (62/62), done.
 PS C:\>
 ```
 
-If you have previously downloaded the training repository, update it to the most recent version: 
+
+
+**Updating with the most recent version:** If you have previously downloaded the training repository, update it to the most recent version with the following git commands: 
+
+-  `git fetch --all`
+
+```
+PS C:\HTAP-Training> git fetch --all
+Fetching origin
+```
+
+
+
+-  ` git reset --hard origin/master`
+
+```
+PS C:\HTAP-Training> git reset --hard origin/master
+HEAD is now at 92f205a added module 2 and exercise
+```
+
+
 
 
 
@@ -1190,69 +1216,71 @@ An excerpt of that report follows:
 
 
 ```
-=================================================================================================
+===================================================================================
 = substitute-h2k: HTAP Costing - Audit Report  
-= h2kFile: C:\HTAP-Training\Intermediate_4\HTAP-work-3\2Story-2100sqft-FullBsmt.h2k 
+= C:\HTAP-Training\Intermediate_4\HTAP-work-3\2Story-2100sqft-FullBsmt.h2k 
 = 2020-01-27 13:27:31 -0500 
-=================================================================================================
+===================================================================================
 
 This report details HTAP's costing calculations.
 
 Cost summary:
- ....................................................................................................
- Option                          Choice                                               Cost 
- ....................................................................................................
-  Opt-Ceilings                   NA                                                $      0.00 
-  Opt-AtticCeilings              NA                                                $      0.00 
-  Opt-FlatCeilings               NA                                                $      0.00 
-  Opt-CathCeilings               NA                                                $      0.00 
-  Opt-ACH                        NA                                                $      0.00 
-  Opt-Windows                    NA                                                $      0.00 
-  Opt-DWHR                       NA                                                $      0.00 
-  Opt-AboveGradeWall             NC_R-23(eff)_2x6-16inOC_R24-batt+1inXPS_poly_vb   $  10545.87 
-  Opt-Heating-Cooling            NA                                                $      0.00 
-  Opt-VentSystem                 NA                                                $      0.00 
-  Opt-DHWSystem                  NA                                                $      0.00 
-  Opt-FoundationWallExtIns       NA                                                $      0.00 
-  Opt-FoundationWallIntIns       NA                                                $      0.00 
-  Opt-FoundationSlabBelowGrade   NA                                                $      0.00 
-  Opt-FoundationSlabOnGrade      NA                                                $      0.00 
-  Opt-FloorHeaderIntIns          NA                                                $      0.00 
-  Opt-ExposedFloor               NA                                                $      0.00 
- ....................................................................................................
- Total                                                                             $  10545.87 
+ ..................................................................................
+ Option                          Choice                                   Cost 
+ ..................................................................................
+ Ceilings                   NA                                     $      0.00 
+ AtticCeilings              NA                                     $      0.00 
+ FlatCeilings               NA                                     $      0.00 
+ CathCeilings               NA                                     $      0.00 
+ ACH                        NA                                     $      0.00 
+ Windows                    NA                                     $      0.00 
+ DWHR                       NA                                     $      0.00 
+ AboveGradeWall             R-23(eff)_2x6-16inOC_R24-batt+1inXPS   $  10545.87 
+ Heating-Cooling            NA                                     $      0.00 
+ VentSystem                 NA                                     $      0.00 
+ DHWSystem                  NA                                     $      0.00 
+ FoundationWallExtIns       NA                                     $      0.00 
+ FoundationWallIntIns       NA                                     $      0.00 
+ FoundationSlabBelowGrade   NA                                     $      0.00 
+ FoundationSlabOnGrade      NA                                     $      0.00 
+ FloorHeaderIntIns          NA                                     $      0.00 
+ ExposedFloor               NA                                     $      0.00 
+ ..................................................................................
+ Total                                                             $  10545.87 
 
-_________________________________________________________________________________________________
-= substitute-h2k: Choice-by-Choice costing calculations =================================================================================================
+___________________________________________________________________________________
+= substitute-h2k: Choice-by-Choice costing calculations ===========================
 
 #1) Opt-ACH = NA
-==========================================================================================================
-Cost Component:   [ ( ( Mat.$ + Lab.$ ) = Cost $] * [ Qty.]  = [  Cost $  ]     
-..........................................................................................................
-as per h2k file         0.00    0.00      0.00        0.00           0.00   Spec as defined in H2K file;
-                                                                            costs cannot be computed
-..........................................................................................................    TOTAL:                                                               0.00    ( total for measure ) 
+===================================================================================
+Cost Component:   [( Mat.$ + Lab.$ ) = Cost $] * [ Qty.]  = [  Cost $  ]     
+...................................................................................
+as per h2k file      0.00    0.00      0.00       0.00         0.00   
+...................................................................................
+TOTAL:                                                         0.00   
 
 #2) Opt-Windows = NA
-==========================================================================================================
-Cost Component:   [ ( ( Mat.$ + Lab.$ ) = Cost $] * [ Qty.]  = [  Cost $  ]     
-..........................................................................................................
-as per h2k file         0.00    0.00      0.00        0.00           0.00   Spec as defined in H2K file;
-                                                                            costs cannot be computed
-..........................................................................................................    TOTAL:                                                               0.00    ( total for measure ) 
-
+===================================================================================
+Cost Component:   [( Mat.$ + Lab.$ ) = Cost $] * [ Qty.]  = [  Cost $  ]     
+...................................................................................
+as per h2k file      0.00    0.00      0.00       0.00         0.00   
+...................................................................................
+TOTAL:                                                         0.00   
+ 
 #3) Opt-AboveGradeWall = NC_R-23(eff)_2x6-16inOC_R24-batt+1inXPS_poly_vb
-==========================================================================================================
-Cost Component:   [ ( ( Mat.$ + Lab.$ ) = Cost $] * [ Qty.]  = [  Cost $  ]   
-..........................................................................................................
-xps type 4: 25mm        0.84     0.68     1.52      1875.78      2851.18   sq.ft - AG wall inc. headers ...
-air barrier mem.        0.12     0.26     0.38      1680.06       638.42   sq.ft - AG wall exc. headers ...
-osb: 12mm               0.26     0.00     0.26      1680.06       436.82   sq.ft - AG wall exc. headers ...
-r24 batt                0.97     0.38     1.35      1680.06      2268.09   sq.ft - AG wall exc. headers ...
-framing: 38x140mm o.c.  0.63     0.81     1.44      1680.06      2419.29   sq.ft - AG wall exc. headers ...
-vapour barrier: 6 mil   0.11     0.28     0.39      1680.06       655.22   sq.ft - AG wall exc. headers ...
-1/2in gypsum board      0.35     0.41     0.76      1680.06      1276.85   sq.ft - AG wall exc. headers ...    ..........................................................................................................    TOTAL:                                                           10545.87    ( total for measure ) 
-Question: 
+===================================================================================
+Cost Component:   [( Mat.$ + Lab.$ ) = Cost $] * [ Qty.]  = [  Cost $  ]   
+...................................................................................
+xps type 4: 25mm    0.84     0.68     1.52      1875.78      2851.18   sq.ft - AG w
+air barrier mem.    0.12     0.26     0.38      1680.06       638.42   sq.ft - AG w
+osb: 12mm           0.26     0.00     0.26      1680.06       436.82   sq.ft - AG w
+r24 batt            0.97     0.38     1.35      1680.06      2268.09   sq.ft - AG w
+framing: 38x140mm   0.63     0.81     1.44      1680.06      2419.29   sq.ft - AG w
+vapour barrier      0.11     0.28     0.39      1680.06       655.22   sq.ft - AG w
+1/2in gypsum board  0.35     0.41     0.76      1680.06      1276.85   sq.ft - AG w 
+...................................................................................
+TOTAL:                                                       10545.87    
+
 ```
 
 
@@ -1623,6 +1651,8 @@ This is an open-ended exercise that affords you an opportunity to apply HTAP's a
 
 >  **Exercise 7:** A Halifax-area builder is seeking solutions that can achieve at least 50% energy savings over code. Use HTAP to identify low-cost approaches. 
 
+
+
 ### Strategies: ###
 
 | Possible Approach | Advantages | Disadvantages      |
@@ -1637,7 +1667,7 @@ This is an open-ended exercise that affords you an opportunity to apply HTAP's a
 -  HOT2000 file: `NC-WideShallow-Lot.h2k`
 -  `.run` file template: `exercise-7.run`
 
-A second run file - `exercise-7-parametric-analysis.run` has already been configured to run 99 different upgrades in parametric mode. Running it produces the following data:
+A second run file - `exercise-7-parametric-analysis.run` has already been configured to run 99 different upgrades in parametric mode. Running it produces the following data:
 
 | Option | Upgrade | Total energy use (GJ) | Energy saved (GJ) | Incremental cost (\$) |  \$ per GJ saved |
 | ------- | ------- | ------- | ------- | ------- | ------- |
