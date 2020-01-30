@@ -1,0 +1,79 @@
+{
+  "upgrade-packages": {
+
+      "25pctSavings":{
+            "Opt-ACH":                        "New-Const-air_seal_to_1.50_ach",
+            "Opt-AtticCeilings":              "CeilR60",
+            "Opt-AboveGradeWall":             "NC_R-25(eff)_2x6-16inOC_R22-batt+1.5inXPS_poly_vb",
+            "Opt-FloorHeaderIntIns":          "NC_R-16eff_5inBatt",
+            "Opt-Windows":                    "NC-3g-HG-u1.36",
+            "Opt-FoundationWallIntIns":       "WoodFrameEffR15",
+            "Opt-FoundationSlabBelowGrade":   "xps2inEffR10",
+            "Opt-DHWSystem":                  "elec_tankless_ef0.94",
+            "Opt-VentSystem":                 "HRV_sre_70"
+
+        },
+        
+        
+      "35pctSavings":{
+            "Opt-ACH":                        "New-Const-air_seal_to_1.00_ach",
+            "Opt-AtticCeilings":              "CeilR70",
+            "Opt-AboveGradeWall":             "NC_R-26(eff)_2x6-16inOC_R19-batt+2inXPS_poly_vb",
+            "Opt-FloorHeaderIntIns":          "NC_R-16eff_5inBatt",
+            "Opt-Windows":                    "NC-3g-LG-u1.08",
+            "Opt-FoundationWallIntIns":       "WoodFrameEffR15",
+            "Opt-FoundationSlabBelowGrade":   "xps2inEffR10",
+            "Opt-DHWSystem":                  "elec_heatpump_ef2.30",
+            "Opt-VentSystem":                 "HRV_sre_78"
+
+        },              
+        
+         "3rdPkg":{
+            "Opt-ACH":                        "New-Const-air_seal_to_0.60_ach",
+            "Opt-AtticCeilings":              "CeilR70",
+            "Opt-AboveGradeWall":             "NC_R-40(eff)_2x6-16inOC_R24-batt+4.5inXPS_poly_vb",
+            "Opt-FloorHeaderIntIns":          "NC_R-16eff_5inBatt",
+            "Opt-Windows":                    "NC-3g-LG-u0.85",
+            "Opt-FoundationWallIntIns":       "WoodFrameEffR15",
+            "Opt-FoundationSlabBelowGrade":   "xps2inEffR10",
+            "Opt-DHWSystem":                  "elec_heatpump_ef2.30",
+            "Opt-VentSystem":                 "HRV_sre_78"
+
+      },         
+        
+        
+      "SuperEfficient":{
+            "Opt-ACH":                        "New-Const-air_seal_to_0.60_ach",
+            "Opt-AtticCeilings":              "CeilR110",
+            "Opt-AboveGradeWall":             "NC_R-40(eff)_2x6-16inOC_R24-batt+4.5inXPS_poly_vb",
+            "Opt-FloorHeaderIntIns":          "NC_R-18eff_5.5inBatt",
+            "Opt-Windows":                    "NC-3g-LG-u0.85",
+            "Opt-FoundationWallIntIns":       "WoodFrameEffR15",
+            "Opt-FoundationWallExtIns":       "xps4inEffR20",
+            "Opt-FoundationSlabBelowGrade":   "xps4inEffR20",
+            "Opt-DHWSystem":                  "elec_heatpump_ef2.30",
+            "Opt-Heating-Cooling":            "GSHP",
+            "Opt-DWHR":                       "NA",            
+            "Opt-VentSystem":                 "HRV_sre_78"
+
+      },      
+        
+      "UserDefined": {
+            "Opt-ACH":                        "NA",
+            "Opt-AtticCeilings":              "NA",
+            "Opt-AboveGradeWall":             "NA",
+            "Opt-FloorHeaderIntIns":          "NA",
+            "Opt-Windows":                    "NA",
+            "Opt-FoundationWallIntIns":       "NA",
+            "Opt-FoundationWallExtIns":       "NA",
+            "Opt-FoundationSlabBelowGrade":   "NA",
+            "Opt-DHWSystem":                  "NA",
+            "Opt-Heating-Cooling":            "NA",
+            "Opt-DWHR":                       "NA",
+            "Opt-VentSystem":                 "NA"
+            
+      }
+
+ 
+  }
+}

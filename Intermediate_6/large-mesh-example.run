@@ -1,0 +1,61 @@
+! Definitions file for HTAP-PRM RUN (Used for Jan 17 training session) 
+
+! Run-Mode: Parameters that affect how htap-prm is configured.
+RunParameters_START
+  run-mode                           = mesh
+  archetype-dir                      = C:/HTAP-Training/h2k_files
+  unit-costs-db                      = C:/HTAP/HTAPUnitCosts.json
+  options-file                       = C:/HTAP/HTAP-options.json
+RunParameters_END
+
+
+! Parameters controlling archetypes, locations, reference rulests. (these will always be
+! run in mesh, even if an optimization mode is added in the future.  
+RunScope_START
+
+  archetypes                        = 2Story-2100sqft-FullBsmt.h2k
+  locations                         = MONTREAL
+  rulesets                          = NBC9_36[fuel>elect]
+RunScope_END
+
+! Parameters controlling the design of the building
+Upgrades_START
+
+
+   Opt-ResultHouseCode  = General
+
+   Opt-ACH         = NA, New-Const-air_seal_to_1.50_ach, New-Const-air_seal_to_1.00_ach, New-Const-air_seal_to_0.60_ach
+
+   Opt-Windows     = NC-2g-LG-u1.65, NC-2g-HG-u1.65, NC-3g-LG-u1.36, NC-3g-HG-u1.36,  NC-3g-LG-u1.08,  NC-3g-HG-u1.08
+   Opt-Skylights   = NA
+   Opt-DoorWindows = NA
+   Opt-Doors       = NA
+
+Opt-AboveGradeWall = NA,  NC_R-19(eff)_2x4-16inOC_R14-batt+1.5inXPS_poly_vb,  NC_R-21(eff)_2x6-16inOC_R19-batt+1inXPS_poly_vb,  NC_R-23(eff)_2x6-16inOC_R24-batt+1inXPS_poly_vb,  NC_R-26(eff)_2x6-16inOC_R19-batt+2inXPS_poly_vb,  NC_R-29(eff)_2x6-24inOC_R24-batt+2inXPS_poly_vb,  NC_R-40(eff)_2x6-16inOC_R24-batt+4.5inXPS_poly_vb  
+
+   Opt-FoundationWallExtIns     =  NA, xps1inEffR5, xps2inEffR10
+   Opt-FoundationWallIntIns     =  NA, WoodFrameEffR15
+   Opt-FoundationSlabBelowGrade =  NA, xps1inEffR5, xps2inEffR10
+   Opt-FoundationSlabOnGrade    =  NA
+    
+   Opt-FloorHeaderIntIns = NA, NC_R-16eff_5inBatt
+
+   Opt-ExposedFloor     = NA
+
+   Opt-Ceilings         = NA
+   Opt-AtticCeilings    = NA, CeilR50, CeilR60, CeilR70, CeilR80
+   Opt-CathCeilings     = NA
+   Opt-FlatCeilings     = NA
+
+   Opt-VentSystem       = NA, HRV_sre_78
+
+   Opt-DHWSystem        = NA, elec_tankless_ef0.94, elec_heatpump_ef2.30
+   Opt-Heating-Cooling  = NA, CCASHP, GSHP  
+   Opt-DWHR             = NA, DWHR-eff-55
+   Opt-H2K-PV           = NA
+   Opt-Baseloads        = NA
+   
+   Opt-WindowDistribution = NA
+
+
+Upgrades_END

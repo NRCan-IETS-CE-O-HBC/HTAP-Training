@@ -13,17 +13,16 @@ RunParameters_END
 ! run in mesh, even if an optimization mode is added in the future.
 RunScope_START
 
-  archetypes                        = 2Story-2100sqft-FullBsmt.h2k 
-  locations                         = WINNIPEG
-  rulesets                          = as-found
-
+  archetypes                        = 2Story-2100sqft-FullBsmt.h2k
+  locations                         = EDMONTON
+  rulesets                          = NBC9_36[fuel>gas]
 RunScope_END
 
 ! Parameters controlling the design of the building
 Upgrades_START
 
 
-   Opt-ResultHouseCode  = General
+   Opt-ResultHouseCode  = ERS
 
    Opt-ACH         = NA 
 
@@ -49,7 +48,7 @@ Upgrades_START
 
    Opt-VentSystem       = NA
    Opt-DHWSystem        = NA
-   Opt-Heating-Cooling  = NA
+   Opt-Heating-Cooling  = NA 
    Opt-DWHR             = NA
    Opt-H2K-PV           = NA
 
