@@ -22,7 +22,7 @@ RunScope_END
 Upgrades_START
 
 
-   Opt-ResultHouseCode  = ERS
+   Opt-ResultHouseCode  = General
 
    Opt-ACH         = NA 
 
