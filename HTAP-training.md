@@ -10,16 +10,6 @@ Version of January 30
 
 [TOC]
 
-
-
-ad
-
-
-
-
-
-
-
 ---
 
 # Prerequisites: Installing HTAP & Training materials #
@@ -1179,7 +1169,7 @@ Opt-AboveGradeWall = NA,
 
 
 
-STEP 5:** Run HTAP 
+**STEP 5:** Run HTAP 
 
 ```
 PS C:\HTAP-Training\Intermediate_5>C:\HTAP\htap-prm.rb -r .\wall-costs.run -k 
@@ -1651,8 +1641,6 @@ This is an open-ended exercise that affords you an opportunity to apply HTAP's a
 
 >  **Exercise 7:** A Halifax-area builder is seeking solutions that can achieve at least 50% energy savings over code. Use HTAP to identify low-cost approaches. 
 
-
-
 ### Strategies: ###
 
 | Possible Approach | Advantages | Disadvantages      |
@@ -1770,3 +1758,27 @@ A second run file - `exercise-7-parametric-analysis.run` has already been config
 |   | NC-2g-MG-u1.65 | 118.4 | -3 | -845 | - |
 |   | NC-2g-LG-u1.65 | 122 | -6.6 | -845 | - |
 |   | NC-3g-LG-u1.36 | 118.7 | -3.3 | 434 | - |
+
+---
+
+# APPENDIX: Tips & Tricks  #
+
+----
+
+### Using HTAP with multiple versions of HOT2000
+
+HTAP expects to find the HOT2000 command-line interface in a folder named `H2K-CLI-Min`. You can use HTAP with multiple versions of HOT2000 with windows symbolic links. Consider this example, where a computer has three versions of the HOT2000 CLI:
+
+![image-20200609114557377](img/image-20200609114557377.png)
+
+You could copy the desired CLI version to a new folder named `H2K-CLI-Min`, and then delete it when you have to use a different version. However, symbolic links provide a simpler solution. 
+
+From the windows command prompt (cmd.exe), enter the following command:
+
+```
+C:\>mklink /J C:\H2K-CLI-Min "C:\HOT2000 v11.6b18345-cli"
+```
+
+This creates symbolic link named `C:\H2K-CLI-Min` that points to  `C:\HOT2000 v11.6b18345-cli`. HTAP will now function correctly.  If you inspect the C: drive with windows explorer, you will see the new symbolic link. 
+
+![image-20200609115247280](img/image-20200609115247280.png)
